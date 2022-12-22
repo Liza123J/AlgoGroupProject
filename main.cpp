@@ -7,7 +7,8 @@ void home(List *mainList, loginList *loginList){
   switch(inputInt){
     case 1:
     //Login admin
-    system("cls");
+    //system("cls");
+    system("clear");
     adminOpt(mainList);
     break;                                                                                                        
     case 2:

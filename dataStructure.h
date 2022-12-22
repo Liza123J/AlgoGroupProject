@@ -1,7 +1,7 @@
 #include "header.h"
 #include "general.h"
 #include "menu.h"
-// #include <curses.h>
+#include <curses.h>
 using namespace std;
 
 //Global Variable to sign in
@@ -330,7 +330,8 @@ void createQuestions(List *ls) {
 }
 
 void adminOpt(List *ls){
-  system("cls");
+  //system("cls");
+  system("clear");
   adminMenu();
   cout<<"Enter your choice >>>>>"; cin>>inputInt;
   if(inputInt){
@@ -345,40 +346,47 @@ void adminOpt(List *ls){
       break;
       case 2:
         //Display q
-        system("cls");
+        //system("cls");
+        system("clear");
         displayQuestion(ls);
         getch();
         adminOpt(ls);
       break;
       case 3:
         //Remove q
-        system("cls");
+        //system("cls");
+        system("clear");
         deleteQuestion(ls);
-        _getch();
+        getch();
         adminOpt(ls);
       break;
       case 4:
         //Edit q
-        system("cls");
+        //system("cls");
+        system("clear");
         cout<<"WIP"<<endl;
       break;
       case 5:
-        system("cls");
+        //system("cls");
+        system("clear");
         // View Test take login info
         cout<<"WIP"<<endl;
       break;
       case 6:
-        system("cls");
+        //system("cls");
+        system("clear");
         //View Test Taker history
         cout<<"WIP"<<endl;
       break;
       case 7:
-        system("cls");
+        //system("cls");
+        system("clear");
         // Exit
         cout<<"WIP"<<endl;
       break;
       default:
-        system("cls");
+        //system("cls");
+        system("clear");
         cout<<"Invalid option"<<endl;
       break;
     }
@@ -443,7 +451,8 @@ void takeTest(List *ls, List *ls1){
   Element *tmp = ls->tail;
   while(tmp!=NULL){
     for (int i = 0 ;i<10;i++){
-    system("cls");
+    //system("cls");
+    system("clear");
     Top:
     cout<<i+1<<"- "<<tmp->q.questionName<<endl;
     cout<<"a. "<<tmp->q.a.a1<<endl;
@@ -475,17 +484,20 @@ void studentOpt(List *ls){
   List *accuracyList;
   accuracyList = createEmptyList();
   Menu:
-  system("cls");
+ // system("cls");
+ system("clear");
   studentMenu();
   cin>>inputInt;
   switch (inputInt)
   {
   case 1:
-    system("cls");
+    //system("cls");
+    system("clear");
     takeTest(ls, accuracyList);
     goto Menu;
   case 2:
-    system("cls");
+    //system("cls");
+    system("clear");
     displayAccuracy(accuracyList);
     break;
   default:
